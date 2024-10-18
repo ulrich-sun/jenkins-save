@@ -1,12 +1,12 @@
 pipeline {
-    environnement {
+    environment {
         IMAGE_NAME = 'website'
         IMAGE_TAG = 'v1'
-        DOCKER_PASSWORD = credetials('docker-password')
+        DOCKER_PASSWORD = credentials('docker-password')
         DOCKER_USERNAME = 'ulrichsteve'
         HOST_PORT = 80
         CONTAINER_PORT = 80
-        IP_DOCKER = 172.17.0.1
+        IP_DOCKER = "172.17.0.1"
     }
     agent any
     stages {
@@ -37,9 +37,9 @@ pipeline {
             }
         }
         stage ('Deploy Prod'){
-            environnement{
-                SERVER_IP = 44.201.122.166
-                SERVER_USER = ubuntu
+            environment{
+                SERVER_IP = '44.201.122.166'
+                SERVER_USER = 'ubuntu'
             }
             when {
                 branch 'main'
@@ -60,9 +60,9 @@ pipeline {
             }
         }
         stage ('Deploy Staging'){
-             environnement{
-                SERVER_IP = 3.82.216.17
-                SERVER_USER = ubuntu
+             environment{
+                SERVER_IP = '3.82.216.17'
+                SERVER_USER = 'ubuntu'
             }
             when {
                 branch 'staging'
@@ -82,9 +82,9 @@ pipeline {
             }
         }
         stage ('Deploy Review'){
-             environnement{
-                SERVER_IP = 35.175.138.157
-                SERVER_USER = ubuntu
+             environment{
+                SERVER_IP = '35.175.138.157'
+                SERVER_USER = 'ubuntu'
             }
             when {
                 branch 'review'
