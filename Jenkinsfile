@@ -2,7 +2,7 @@ pipeline {
     environment {
         IMAGE_NAME = 'website'
         IMAGE_TAG = 'v1'
-        DOCKER_PASSWORD = credentials('docker-password')
+        DOCKER_PASSWORD = credentials('dockerhub-password')
         DOCKER_USERNAME = 'ulrichsteve'
         HOST_PORT = 80
         CONTAINER_PORT = 80
