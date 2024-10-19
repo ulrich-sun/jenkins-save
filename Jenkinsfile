@@ -47,8 +47,8 @@ pipeline {
                 SERVER_IP = '44.201.122.166'
                 SERVER_USER = 'ubuntu'
             }
-            when {
-                branch 'main'
+            // when {
+            //     branch 'main'
             }
             steps {
                 script {
